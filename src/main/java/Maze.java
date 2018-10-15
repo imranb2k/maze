@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class maze {
+public class Maze {
 
     public List read (String inputFile){
 
-        ArrayList maze = new ArrayList();
+        ArrayList<Character> maze = new ArrayList<>();
 
         try{
 
@@ -18,8 +18,7 @@ public class maze {
 
             while(br.ready()) {
 
-                maze.add(br.readLine());
-
+                br.readLine().chars().forEach(x -> System.out.println((char)x));
             }
 
         } catch (IOException e) {
