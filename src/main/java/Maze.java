@@ -18,7 +18,7 @@ public class Maze {
 
             while(br.ready()) {
 
-                br.readLine().chars().forEach(x -> System.out.println((char)x));
+                br.readLine().chars().forEach(x -> maze.add((char)x));
             }
 
         } catch (IOException e) {
