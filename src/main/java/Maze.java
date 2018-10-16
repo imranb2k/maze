@@ -6,7 +6,7 @@ public class Maze {
 
     public List read (String inputFile){
 
-        ArrayList<Character> maze = new ArrayList<>();
+        ArrayList<Integer> maze = new ArrayList<>();
 
         try{
 
@@ -18,7 +18,10 @@ public class Maze {
 
             while(br.ready()) {
 
-                br.readLine().chars().forEach(x -> maze.add((char)x));
+                br.readLine().chars()
+                        .filter(x -> x != ' ')
+                        .map(x -> Character.getNumericValue(x))
+                        .forEach(x -> maze.add(x));
             }
 
         } catch (IOException e) {
